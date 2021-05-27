@@ -16,10 +16,13 @@ jobs:
       uses: actions/setup-go@v2.1.3
       with:
         # The Go version to download (if necessary) and use. Supports semver spec and ranges.
-        go-version: 1.13.7
+        go-version: 1.16.4
       
     - name: Check Go Version
-      run: go version
+      run: |
+        go version
+        go mod init calculator-main
+        go mod tidy
     
     - name: Checkout my codes
       uses: actions/checkout@v2
