@@ -21,28 +21,24 @@ jobs:
     - name: Check Go Version
       run: go version
     
-    - name: Checkout my codes
+    - name: Upload to Ubuntu
       uses: actions/checkout@v2
    
-    - name: Check file system
+    - name: Resolve dependencies
       run: |
-        ls
-        cat calc.go
         go mod init calculator-main
         go mod tidy
         
-    - name: Checkout private repo  
+    - name: Upload file from private repo to Ubuntu
       uses: actions/checkout@v2
       with:
         repository: lowkh2/GoSchoolRemoteExample
-        path: remoteRepo
+        path: GoSchoolRemoteExample
         token: ${{ secrets.GO_REMOTE }}
         
-    - name: Check files
+    - name: Verify for successful download
       run: |
-        ls
-        cd remoteRepo
-        ls
+        cd GoSchoolRemoteExample
         cat myText.txt
         cd ..
         
