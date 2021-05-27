@@ -42,4 +42,4 @@ jobs:
         
     - name: Check files
       run: |
-        ls
+        ls -a
