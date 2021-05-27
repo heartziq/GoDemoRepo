@@ -42,11 +42,8 @@ jobs:
         
     - name: Check files
       run: |
-        ls -a
-        
-    - name: Check files
-      run: |
         ls
         cd remoteRepo
         ls
+        cat myText.txt
         cd ..
