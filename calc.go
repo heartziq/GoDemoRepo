@@ -5,6 +5,8 @@ func Add(val1, val2 int) int {
 	return val1 + val2
 }
 
+// add to test yaml running
+
 // Subtract two numbers and return the result.
 func Subtract(val1, val2 int) int {
 	return val1 - val2
