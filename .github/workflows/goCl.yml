@@ -31,4 +31,4 @@ jobs:
       run: |
         ls
         cat calc.go
-        cat calc_test.go
+        cat calc_goblin_test.go
