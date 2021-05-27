@@ -26,14 +26,13 @@ jobs:
       
     - name: Install dependencies
       run: |
+        go mod init calculator-main
         go get github.com/franela/goblin
         go get github.com/tebeka/go2xunit
         go test -v  | go2xunit > report.xml
    
     - name: Resolve dependencies
-      run: |
-        go mod init calculator-main
-        go mod tidy
+      run: go mod tidy
         
     - name: Upload file from private repo to Ubuntu
       uses: actions/checkout@v2
